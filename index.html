@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Controlled Puzzle Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-layout">
+        <div class="score-card">
+            <h2>Score</h2>
+            <div id="score">0</div>
+            <div class="best-score-label">Best</div>
+            <div id="best-score">0</div>
+        </div>
+        <div class="game-center">
+            <h1>Voice Controlled Puzzle Game</h1>
+            <canvas id="gameCanvas" width="300" height="600"></canvas>
+            <div class="controls">
+                <button id="start-button">Start Game</button>
+                <button id="pause-button">Pause</button>
+            </div>
+            <div id="voice-status" style="margin-top:10px; min-height:24px;"></div>
+        </div>
+        <div id="instructions">
+            <h2>Tips</h2>
+            <p>Use your voice to control the game!</p>
+            <ul>
+                <li><b>"Start game"</b> - new game</li>
+                <li><b>"Left"</b> - Move left</li>
+                <li><b>"Right"</b> - Move right</li>
+                <li><b>"Rotate"</b> - Rotate piece</li>
+                <li><b>"Down"</b> - Move piece down</li>
+                <li><b>"Pause"</b> - Pause</li>
+                <li><b>"Resume"</b> - Resume</li>
+            </ul>
+        </div>
+    </div>
+    <audio id="background-music" src="assets/background-music.mp3" loop></audio>
+    <audio id="line-clear-sound" src="assets/line-clear.wav"></audio>
+    <audio id="game-over-sound" src="assets/game-over.wav"></audio>
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,128 @@
+body {
+    font-family: sans-serif;
+    background-color: #222;
+    color: #f0f0f0;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.main-layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    gap: 40px;
+}
+
+.score-card {
+    margin: 40px 0 0 0;
+    padding: 16px 0;
+    width: 200px;
+    background: #222;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    text-align: center;
+    font-size: 1.5em;
+    border: 2px solid #444;
+    color: #f0f0f0;
+}
+
+.score-card h2 {
+    margin: 0 0 8px 0;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+}
+
+.score-card #score {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #90caf9;
+}
+
+.score-card .best-score-label {
+    font-size: 0.9em;
+    color: #aaa;
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+
+.score-card #best-score {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 0 0 8px #ffd70099;
+    margin-bottom: 4px;
+}
+
+.game-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+canvas {
+    border: 2px solid #f0f0f0;
+    background-color: #444;
+    margin-bottom: 20px;
+}
+
+.controls {
+    margin-top: 10px;
+}
+
+#start-button, #pause-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background: #333;
+    color: #f0f0f0;
+    border: 1px solid #555;
+    border-radius: 5px;
+    margin: 0 8px;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 8px 2px #2196f3, 0 0 0 #fff;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 8px 2px #2196f3, 0 0 0 #fff;
+    }
+    to {
+        box-shadow: 0 0 18px 6px #90caf9, 0 0 0 #fff;
+    }
+}
+
+#start-button:hover, #pause-button:hover {
+    background: #444;
+}
+
+#instructions {
+    margin-top: 40px;
+    padding: 18px 20px;
+    border: 1px solid #555;
+    border-radius: 8px;
+    background-color: #292929;
+    text-align: left;
+    max-width: 300px;
+    color: #f0f0f0;
+}
+
+#instructions h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+#instructions ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#instructions li {
+    margin-bottom: 8px;
+}
+
+/* Remove theme switcher */
+.theme-switcher { display: none !important; } 
