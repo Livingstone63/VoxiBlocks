@@ -349,12 +349,27 @@ function handleVoiceCommand(command) {
     } else if (command.includes('rotate')) {
         currentPiece.rotate();
     } else if (command.includes('down')) {
-        // Hard drop: move piece down until it locks
-        while (true) {
-            let prevRow = currentPiece.r;
-            currentPiece.moveDown();
-            if (currentPiece.r === prevRow) break;
-            if (!currentPiece) break;
-        }
+        currentPiece.moveDown();
     }
-} 
+}
+
+window.addEventListener('DOMContentLoaded', function() {
+    var aboutSection = document.getElementById('about-section');
+    var aboutToggle = document.getElementById('about-toggle');
+    if (aboutSection && aboutToggle) {
+        function updateAboutVisibility() {
+            if (window.innerWidth <= 600) {
+                aboutSection.classList.remove('open');
+                aboutToggle.style.display = 'block';
+            } else {
+                aboutSection.classList.add('open');
+                aboutToggle.style.display = 'none';
+            }
+        }
+        aboutToggle.addEventListener('click', function() {
+            aboutSection.classList.toggle('open');
+        });
+        window.addEventListener('resize', updateAboutVisibility);
+        updateAboutVisibility();
+    }
+}); 
